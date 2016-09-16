@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/imabak"
+    tools:context="com.example.user1.trakttvshows.MoviesTab">
+
+    <!-- create a ImageView and Gallery -->
+    <ImageView
+        android:id="@+id/selectedImageView"
+        android:layout_width="fill_parent"
+        android:background="@drawable/stranger"
+        android:layout_height="200dp"
+        android:scaleType="fitXY" />
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        />
+    <Gallery
+        android:id="@+id/simpleGallery"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:unselectedAlpha="0.80" />
+
+</LinearLayout>
