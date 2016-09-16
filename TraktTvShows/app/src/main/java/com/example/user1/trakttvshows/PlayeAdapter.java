@@ -1,6 +1,8 @@
 package com.example.user1.trakttvshows;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -55,8 +57,14 @@ public class PlayeAdapter extends BaseAdapter {
                 .fit()
                 .into(imageView);
         //imageView.setImageResource(mThumbIds[position]);
-        imageView.setLayoutParams(new Gallery.LayoutParams(230, 230));
+       // imageView.setLayoutParams(new Gallery.LayoutParams(230, 230));
+        imageView.setLayoutParams(new Gallery.LayoutParams((int)convertDpToPixel(200,mContext),(int)convertDpToPixel(200,mContext)));
         return imageView;
     }
-
+    public static float convertDpToPixel(float dp, Context context){
+        Resources resources = context.getResources();
+        DisplayMetrics metrics = resources.getDisplayMetrics();
+        float px = dp * ((float)metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT);
+        return px;
+    }
 }

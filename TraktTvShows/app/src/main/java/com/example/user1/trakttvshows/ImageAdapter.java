@@ -1,5 +1,7 @@
 package com.example.user1.trakttvshows;
 import android.content.Context;
+import android.content.res.Resources;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -80,8 +82,16 @@ public class ImageAdapter extends BaseAdapter {
                 .into(imageView);
        // imageView.setImageResource(mThumbIds[position]);
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        imageView.setLayoutParams(new GridView.LayoutParams(150, 150));
+        imageView.setLayoutParams(new GridView.LayoutParams((int)convertDpToPixel(85,mContext),(int)convertDpToPixel(85,mContext)));
         return imageView;
-    }
 
+
+
+    }
+    public static float convertDpToPixel(float dp, Context context){
+        Resources resources = context.getResources();
+        DisplayMetrics metrics = resources.getDisplayMetrics();
+        float px = dp * ((float)metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT);
+        return px;
+    }
 }
